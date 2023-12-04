@@ -184,7 +184,12 @@ kbd,
 samp {
   font-family: monospace, monospace;
   font-size: 1em; }
-
+  .footer-col h3 {
+    color: #fff !important;
+  }
+  .footer-col p{
+    color: #fff !important;
+  }
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
