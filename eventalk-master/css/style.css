@@ -430,8 +430,12 @@ mark,
     content: "\2014 \00A0"; }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto; }
+  width: 250px;
+  height: 200px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  margin-left: 55px;
+ }
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -449,7 +453,7 @@ mark,
   line-height: 1; }
 
 .figure-caption {
-  font-size: 90%;
+  font-size: 100%;
   color: #6c757d; }
 
 code,
@@ -6215,7 +6219,8 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important; }
+  margin-bottom: 1.5rem !important;
+ }
 
 .ml-4,
 .mx-4 {
