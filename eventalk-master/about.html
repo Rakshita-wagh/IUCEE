@@ -1,233 +1,950 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>IASF 2024- kletech -IASF 2023</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">  
-    
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style media="screen">
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap");
+      :root {
+        --primary-color: #a73121c7;
+        --white-color: #ffffff;
+        --light-color: #ced6e0;
+        --dark-color: #2f3542;
+        --box-shadow: rgb(0 0 2 /35%) 0px 20px 30px -10px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      body {
+        background-color: #ecf0f1;
+      }
+
+      a,
+      button,
+      div[role="button"] {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      ul {
+        list-style: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        line-height: normal;
+      }
+      h1 {
+        font-size: 2.5rem !important;
+        color:#a73121;
+        margin-top: 50px;
+      }
+      h2 {
+        font-size: 2em;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
+      h4 {
+        font-size: 1em;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.8;
+        color: var(--dark-color);
+        background-color: var(--white-color);
+      }
+
+      .btn {
+        max-width: 50%;
+        display: inline-block;
+        background-color: var(--primary-color);
+        font-size: 1rem;
+        font-family: inherit;
+        font-weight: 500;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        color: var(--white-color);
+      }
+
+      .site {
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        max-width: 1100px;
+        width: 100%;
+        padding: 0 30px;
+        margin: 0 auto;
+      }
+      .testi {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .testi .head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .testi .head h3 {
+        font-style: 34px;
+        font-weight: 800;
+      }
+      .testi .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        padding: 30px 0;
+      }
+
+      /* slider */
+      .testi :is(.swiper-button-next, .swiper-button-prev) {
+        background-color: var(--light-color);
+        top: 35%;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+        box-shadow: var(--box-shadow);
+      }
+      .testi :is(.swiper-button-next, .swiper-button-prev):hover {
+        background-color: var(--primary-color);
+      }
+      .testi :is(.swiper-button-next, .swiper-button-prev)::after {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--white-color);
+      }
+      .testi .swiper-pagination {
+        position: relative;
+      }
+      .testi .swiper-pagination span {
+        background-color: var(--light-color);
+        transition: width 0.3s;
+        opacity: 1;
+      }
+      .testi .swiper-pagination .swiper-pagination-bullet-active {
+        width: 26px;
+        border-radius: 4px;
+        background-color: var(--primary-color);
+      }
+      /* thumbnail */
+      .testi .thumbnail {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .testi .thumbnail img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: scale(2);
+        transition: transform 0.5s;
+      }
+      .testi .swiper-slide-active .thumbnail img {
+        transform: scale(1);
+      }
+      .testi .thumbnail::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% + 30px);
+        height: calc(100% + 10px);
+        background-color: var(--primary-color);
+        z-index: -1;
+        box-shadow: var(--box-shadow);
+        transition: border-radius 0.5s 0.15s;
+      }
+
+      .testi .swiper-slide-active .thumbnail::before {
+        border-radius: 33% 67% 50% 50% / 50% 14% 86% 50%;
+      }
+      .testi .aside {
+        position: relative;
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+      }
+      .testi .aside > p {
+        position: relative;
+        font-size: 14px;
+        line-height: normal;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translateX(10%);
+        transition: transform 1s, opacity 1s;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .testi .swiper-slide-active .aside > p {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      .testi .aside > p::after,
+      .testi .aside > p::before {
+        font-family: serif;
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 1;
+        position: absolute;
+        color: var(--light-color);
+        height: 40px;
+        z-index: -1;
+      }
+      .testi .aside > p::before {
+        content: open-quote;
+        top: -40px;
+        left: 10px;
+      }
+      .testi .aside > p::after {
+        content: close-quote;
+        right: 0;
+      }
+
+      .testi .aside .name {
+        position: relative;
+        width: fit-content;
+        line-height: 1;
+        opacity: 0;
+        transform: translateX(30px);
+        transform: transform 1s 0.2s, opacity 1s 0.3s;
+      }
+      .testi .swiper-slide-active .name {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .testi .aside .name h4 {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--primary-color);
+        opacity: 0.8;
+      }
+
+      .testi .aside .name p {
+        font-size: 12px;
+        text-align: right;
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 60rem;
+        max-height: 90vh;
+        background-color: #f3f3f3;
+        padding: 2.5rem 4rem;
+        box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition: all 0.5s;
+        overflow-y: scroll;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 100;
+        transition: all 0.5s;
+      }
+
+      .btn--close-modal {
+        font-family: inherit;
+        color: inherit;
+        position: absolute;
+        top: 0.25rem;
+        right: 1.5rem;
+        font-size: 4rem;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+      @media screen and (max-width: 600px) {
+        .modal {
+          padding: 2rem 3rem;
+          width: 90vw;
+        }
+        .btn--close-modal {
+          font-size: 3rem;
+        }
+      }
+      .hidden {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      @media screen and (min-width: 768px) {
+        .testi .wrapper {
+          flex-direction: row;
+          padding: 30px 100px;
+        }
+        .testi .thumbnail {
+          width: 200px;
+          height: 200px;
+        }
+        .testi :is(.swiper-button-next, .swiper-button-prev) {
+          top: 50%;
+        }
+        .testi .swiper-slide-active .name {
+          transform: translateX(-50px);
+        }
+      }
+
+      /* img gallery  */
+
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        column-gap: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+        width: 94%;
+        margin: 0 auto;
+        padding: 10px;
+      }
+      .gallery-item {
+        flex-basis: 32.9%;
+        margin-bottom: 6px;
+        opacity: 0.75;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      .gallery-item:hover {
+        opacity: 1;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-content {
+        font-size: 0.8em;
+      }
+
+      .heading {
+        display: flex;
+        justify-content: center;
+        font-weight: 800;
+      }
+      @media (max-width: 1100px) {
+        .gallery-container {
+          width: 100%;
+        }
+        .gallery-item {
+          flex-basis: 49.3%;
+          margin-bottom: 3px;
+          opacity: 0.9;
+        }
+      }
+      @media (max-width: 480px) {
+        .gallery-item {
+          flex-basis: 100%;
+          margin-bottm: 1px;
+        }
+      }
+    </style>
   </head>
   <body>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">IASF<span> 2024</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="about.html" class="nav-link">IASF 2023</a></li>
-	          <li class="nav-item"><a href="speakers.html" class="nav-link">IASF Team</a></li>
-	          <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
-	     
-            <li class="nav-item cta mr-md-2"><a href="https://registration.kletech.ac.in/form-iasf-registration" class="nav-link">Register</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <section class="ftco-section testimony-section">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <div class="testrow justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><Table>Testimonials</Table></h2>
-          </div>
+        <a class="navbar-brand" href="index.html">IASF<span> 2024</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item active" ><a href="index.html" class="nav-link"><b>Home</b></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><b>IASF 2023</b></a></li>
+            <li class="nav-item"><a href="speakers.html" class="nav-link"><b>IASF Team</b></a></li>
+            <li class="nav-item"><a href="schedule.html" class="nav-link"><b>Schedule</b></a></li>
+            
+            <li class="nav-item cta mr-md-2"><a href="https://registration.kletech.ac.in/form-iasf-registration" class="nav-link">Register</a></li>
+</ul>
         </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/tanvi.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">IUCEE is the definition of "experiential learning with purpose". I had always wondered to myself as an engineering student "Why are we as engineers so important?" The answer to this question I found in the Kletech IUCEE chapter when I learned being in an environment that stimulates minds to think along the lines of solving real-life problems with technology and this in return helped me bringing engineering solutions to solve society's problems. Because "who are we as engineers if we do not help the society?". It is exhilarating when you find the right answers to questions that are important to you, I can assure you that the question above was important to me as something along the same lines was asked to me in my HR interview for placement. Knowing that no question is unimportant and every answer has a purpose my journey at IUCEE has been enriching</p>
+      </div>
+    </nav>
+    <div id="page" class="site">
+      <div class="container">
+        <div class="testi">
+          <div class="head">
+            <h1>Testimonials</h1>
+            <p>See what past participants have to say about IASF...</p>
+          </div>
 
-                    
-               
-                    <p class="name">Tanvi Bhujannavar</p>
-                    <span class="position">KLE Technological university</span>
+          <div class="body swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/TPXtYXJL/Pravalika.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="aside">
+                    <p>
+                      In the early days of my college life during the first year
+                      of my B. Tech program, In a situation where I need to
+                      speak about sustainability in India spontaneously. At that
+                      time I didn't even have a basic idea of how sustainability
+                      takes place in India. That situation sparked my curiosity
+                      and encouraged me to seek in-depth knowledge about
+                      sustainability. After attending 8 weeks of Sustainability
+                      inquiry workshop, I attended IASF-2023 at VVCE College,
+                      Mysore. IASF-2023 took place from January 2nd to 6th. It
+                      gathered students from various IUCEE Chapters across
+                      different states, facilitating the exchange of ideas and
+                      thought processes related to various Sustainable
+                      Development Goals (SDGs). As a member of the SDG-11 team
+                      within IASF, I participated in conducting research on
+                      environmental issues aligned with our sustainability
+                      development goal with our team. Together, we identified
+                      and formulated a clear problem statement, and with the
+                      guidance of our mentor, Berjis Driver Sir, we proposed
+                      effective solutions. It was a valuable opportunity to
+                      collaborate with such experienced experts. IASF-2023 has
+                      brought about a significant change in our lives, I now
+                      conscientiously consider the environmental impact of my
+                      actions, whether it's minimizing food wastage or
+                      responsibly disposing of waste, which has become my
+                      newfound habit. Apart from my personal development, what I
+                      learned from IASF-2023 from a professional perspective are
+                      problem-solving skills, networking, and adaptation to
+                      changing times. I wholeheartedly look forward to engaging
+                      in more enriching events like IASF in the future.
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal1">
+                      Read More
+                    </button>
+                    <div class="name">
+                      <h4>CH. Pravalika Reddy</h4>
+                      <p>HITAM College</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/Pravalika.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">In the early days of my college life during the first year of my B. Tech program, In a situation where I need to speak about sustainability in India spontaneously. At that time I didn't even have a basic idea of how sustainability takes place in India. That situation sparked my curiosity and encouraged me to seek in-depth knowledge about sustainability. After attending 8 weeks of Sustainability inquiry workshop, I attended IASF-2023 at VVCE College, Mysore. IASF-2023 took place from January 2nd to 6th. It gathered students from various IUCEE Chapters across different states, facilitating the exchange of ideas and thought processes related to various Sustainable Development Goals (SDGs). As a member of the SDG-11 team within IASF, I participated in conducting research on environmental issues aligned with our sustainability development goal with our team. Together, we identified and formulated a clear problem statement, and with the guidance of our mentor, Berjis Driver Sir, we proposed effective solutions. It was a valuable opportunity to collaborate with such experienced experts. IASF-2023 has brought about a significant change in our lives, I now conscientiously consider the environmental impact of my actions, whether it's minimizing food wastage or responsibly disposing of waste, which has become my newfound habit. Apart from my personal development, what I learned from IASF-2023 from a professional perspective are problem-solving skills, networking, and adaptation to changing times. I wholeheartedly look forward to engaging in more enriching events like IASF in the future.</p>
-                    <p class="name">CH. Pravalika Reddy</p>
-                    <span class="position">
-                      HITAM college
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/aswin-photo.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">The 3 days spent at IASF 2023 left a lasting impression on me, and I continue to feel its impact even after the event has concluded. The guidance provided by UN mentors proved invaluable, allowing me to engage with like-minded individuals who shared a desire to contribute to society. We had the opportunity to view our project from various perspectives, thanks to the valuable suggestions offered by several industry delegates who observed our project display. All in all, the event was truly unforgettable, and I gained numerous insights and key takeaways from it.</p>
-                    <p class="name">Aswin Sankesh G S</p>
-                    <span class="position">Thiagarajar college of engineering</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/yadavamutihah.png)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">For me, this event was a profound experience that significantly enriched my journey as a student. Over those three days, I had the privilege of engaging in a multitude of technical and informative sessions, expanding my knowledge base and igniting my passion for engineering and innovation. The event's highlights included an inspiring walkathon through Mysore's picturesque streets, where I forged unforgettable memories and had the honor of learning from mentors like Krishna Sir and Sampada Pachaury Mam, who fueled my ambitions. The pinnacle was presenting my AI-based water disinfection project to an audience of scholars and influential figures, including the motivational Mr. Nile, an American professor. This event underscored the vital role engineers play in preserving our environment, instilling in me a profound sense of responsibility to develop sustainable solutions for a brighter future. In conclusion, the IUCEE and IASF event at Vidyavardhaka College in Mysore was a transformative experience, expanding my technical expertise and inspiring me to commit to sustainability and innovation in my engineering journey.</p>
-                    <p class="name">Yadavamutihah K </p>
-                    <span class="position">Hindustan Institute of Technology and Science </span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/Inchara-pic.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">IASF 2023 was an eye opening for all of us as it helped us to think, rejuvenate and rejoice in the art of learning and gain practical exposure to the current world happenings. This 3 -day conference helped us think sustainably and contribute judiciously towards the betterment of mother earth. All the mentors guided us on how to tackle the problems, how to narrow down and navigate the solutions to the existing problems and how effectively we can build a sustainable awareness model. And also the 5-km walkathon around the city of Mysore was a wakening call for all of us to get reminded as a responsible greener citizen. I would like to extend my heartfelt gratitude to IUCEE organizations, Ms. Sampada Pachaury mam and all our mentors for their untiring and unwavering support to get the best out from us!! Their words of action and speech was motivating and gave a conscious bell to the conscience to build an eco-greener environment and abide to the same....!.</p>
-                    <p class="name">P Venkat Narasimha Rao</p>
-                    <span class="position">Anurag University</span>
-                  </div>
-                </div>
-              </div>
+              </li>
 
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/Venkat-Anurag-Univ.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/kgSjm5KP/Venkat-Anurag-Univ.jpg"
+                      alt=""
+                    />
                   </div>
-                  <div class="text">
-                    <p class="mb-4">IASF 2023 was an eye-opening experience that I will forever cherish. My journey from Hyderabad to Mysuru began with little to no prior knowledge about IUCEE and its mission. However, from the moment I stepped into the IUCEE Annual Student Forum, I was immersed in a world of innovation, education, and sustainable development. The highlight of my IASF experience was the opportunity to work alongside UN Ambassadors on SDG 15 - Life on Land. This collaboration exposed me to the pressing global challenges related to environmental conservation, deforestation, and ecosystem preservation. It was incredible to witness the dedication and passion of the UN Ambassadors in their mission to make the world a better place. The learnings and exposure I gained at IASF were truly transformative. I was inspired by the diverse group of students who shared their unique perspectives and innovative ideas. This motivated me to bring a similar platform to my university, Anurag University. Hence, the concept of AUNSF (Anurag University National Student Forum) was born. IASF served as a catalyst for me and my peers to replicate the spirit of collaboration, knowledge sharing, and commitment to sustainable development within our own university. In conclusion, IASF 2023 was not just an event but a life-changing experience that broadened my horizons, connected me with remarkable individuals, and empowered me to make a positive impact in the world. I am grateful to IUCEE for this opportunity and look forward to contributing to the global mission of education and sustainable development.
-                      <p class="name">Inchara N Aaradhya</p>
-                    <span class="position">RV College of Engineering</span> 
+                  <div class="aside">
+                    <p>
+                      IASF 2023 was an eye-opening experience that I will
+                      forever cherish. My journey from Hyderabad to Mysuru began
+                      with little to no prior knowledge about IUCEE and its
+                      mission. However, from the moment I stepped into the IUCEE
+                      Annual Student Forum, I was immersed in a world of
+                      innovation, education, and sustainable development. The
+                      highlight of my IASF experience was the opportunity to
+                      work alongside UN Ambassadors on SDG 15 - Life on Land.
+                      This collaboration exposed me to the pressing global
+                      challenges related to environmental conservation,
+                      deforestation, and ecosystem preservation. It was
+                      incredible to witness the dedication and passion of the UN
+                      Ambassadors in their mission to make the world a better
+                      place. The learnings and exposure I gained at IASF were
+                      truly transformative. I was inspired by the diverse group
+                      of students who shared their unique perspectives and
+                      innovative ideas. This motivated me to bring a similar
+                      platform to my university, Anurag University. Hence, the
+                      concept of AUNSF (Anurag University National Student
+                      Forum) was born. IASF served as a catalyst for me and my
+                      peers to replicate the spirit of collaboration, knowledge
+                      sharing, and commitment to sustainable development within
+                      our own university. In conclusion, IASF 2023 was not just
+                      an event but a life-changing experience that broadened my
+                      horizons, connected me with remarkable individuals, and
+                      empowered me to make a positive impact in the world. I am
+                      grateful to IUCEE for this opportunity and look forward to
+                      contributing to the global mission of education and
+                      sustainable development.
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal2">
+                      Read More
+                    </button>
+
+                    <div class="name">
+                      <h4>P. Venkat Narsimha Rao</h4>
+                      <p>Anurag University</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </li>
+
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/ZqFVWDwf/Inchara-pic.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="aside">
+                    <p>
+                      IASF 2023 was an eye opening for all of us as it helped us
+                      to think, rejuvenate and rejoice in the art of learning
+                      and gain practical exposure to the current world
+                      happenings. This 3 -day conference helped us think
+                      sustainably and contribute judiciously towards the
+                      betterment of mother earth. All the mentors guided us on
+                      how to tackle the problems, how to narrow down and
+                      navigate the solutions to the existing problems and how
+                      effectively we can build a sustainable awareness model.
+                      And also the 5-km walkathon around the city of Mysore was
+                      a wakening call for all of us to get reminded as a
+                      responsible greener citizen. I would like to extend my
+                      heartfelt gratitude to IUCEE organizations, Ms. Sampada
+                      Pachaury mam and all our mentors for their untiring and
+                      unwavering support to get the best out from us!! Their
+                      words of action and speech was motivating and gave a
+                      conscious bell to the conscience to build an eco-greener
+                      environment and abide to the same....!
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal3">
+                      Read More
+                    </button>
+                    <div class="name">
+                      <h4>Inchara N Aradhya</h4>
+                      <p>RV College Of Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/bJmgTSck/aswin-photo.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="aside">
+                    <p>
+                      The 3 days spent at IASF 2023 left a lasting impression on
+                      me, and I continue to feel its impact even after the event
+                      has concluded. The guidance provided by UN mentors proved
+                      invaluable, allowing me to engage with like-minded
+                      individuals who shared a desire to contribute to society.
+                      We had the opportunity to view our project from various
+                      perspectives, thanks to the valuable suggestions offered
+                      by several industry delegates who observed our project
+                      display. All in all, the event was truly unforgettable,
+                      and I gained numerous insights and key takeaways from it.
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal4">
+                      Read More
+                    </button>
+
+                    <div class="name">
+                      <h4>Aswin Sankesh G S</h4>
+                      <p>Thiagarajar College of Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/zBzpKSMq/image-2023-09-12-214347373.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="aside">
+                    <p>
+                      For me, this event was a profound experience that
+                      significantly enriched my journey as a student. Over those
+                      three days, I had the privilege of engaging in a multitude
+                      of technical and informative sessions, expanding my
+                      knowledge base and igniting my passion for engineering and
+                      innovation. The event's highlights included an inspiring
+                      walkathon through Mysore's picturesque streets, where I
+                      forged unforgettable memories and had the honor of
+                      learning from mentors like Krishna Sir and Sampada
+                      Pachaury Mam, who fueled my ambitions. The pinnacle was
+                      presenting my AI-based water disinfection project to an
+                      audience of scholars and influential figures, including
+                      the motivational Mr. Nile, an American professor. This
+                      event underscored the vital role engineers play in
+                      preserving our environment, instilling in me a profound
+                      sense of responsibility to develop sustainable solutions
+                      for a brighter future. In conclusion, the IUCEE and IASF
+                      event at Vidyavardhaka College in Mysore was a
+                      transformative experience, expanding my technical
+                      expertise and inspiring me to commit to sustainability and
+                      innovation in my engineering journey.
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal5">
+                      Read More
+                    </button>
+
+                    <div class="name">
+                      <h4>Yadavamuthiah K</h4>
+                      <p>Hindustan Institute of Technology and Science</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide">
+                <div class="wrapper">
+                  <div class="thumbnail">
+                    <img
+                      src="https://i.postimg.cc/PJqfX3dD/20221106-195454.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="aside">
+                    <p>
+                      IUCEE is the definition of "experiential learning with
+                      purpose". I had always wondered to myself as an
+                      engineering student "Why are we as engineers so
+                      important?" The answer to this question I found in the
+                      Kletech IUCEE chapter when I learned being in an
+                      environment that stimulates minds to think along the lines
+                      of solving real-life problems with technology and this in
+                      return helped me bringing engineering solutions to solve
+                      society's problems. Because "who are we as engineers if we
+                      do not help the society?". It is exhilarating when you
+                      find the right answers to questions that are important to
+                      you, I can assure you that the question above was
+                      important to me as something along the same lines was
+                      asked to me in my HR interview for placement. Knowing that
+                      no question is unimportant and every answer has a purpose
+                      my journey at IUCEE has been enriching
+                    </p>
+                    <button class="btn btn--show-modal" data-target="#modal6">
+                      Read More
+                    </button>
+
+                    <div class="name">
+                      <h4>Tanvi Bhujannavar</h4>
+                      <p>KLE Technological University</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </div>
-    </section>
-
-
-
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Image Gallery</span>
-            <h2 class="mb-4">Our Events</h2>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="img-fluid">
-        		<img src="images/1.jpg" class="img-fluid p-20" alt="Colorlib HTML5 Template">
-        	</div>
-					<div class="img-fluid">
-        		<img src="images/2.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	
-        	</div>
-        	<div class="img-fluid">
-        		<img src="images/3.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	
-        	</div>
-        	<div class="img-fluid">
-        		<img src="images/4.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	
-        	</div>
-					<div class="img-fluid">
-        		<img src="images/5.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	
-        	</div>
-        	<div class="img-fluid">
-        		<img src="images/6.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-
-          <div class="img-fluid">
-        		<img src="images/7.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-
-          <div class="img-fluid">
-        		<img src="images/8.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/9.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/10.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/11.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/12.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/13.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/14.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/15.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/16.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-          <div class="img-fluid">
-        		<img src="images/17.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        	</div>
-
-        </div>
-    	</div>
-    </section>
+    </div>
+    <div class="modal hidden" id="modal1">
+      <button class="btn--close-modal" data-target="#modal1">&times;</button>
+      <p>
+        In the early days of my college life during the first year of my B. Tech
+        program, In a situation where I need to speak about sustainability in
+        India spontaneously. At that time I didn't even have a basic idea of how
+        sustainability takes place in India. That situation sparked my curiosity
+        and encouraged me to seek in-depth knowledge about sustainability. After
+        attending 8 weeks of Sustainability inquiry workshop, I attended
+        IASF-2023 at VVCE College, Mysore. IASF-2023 took place from January 2nd
+        to 6th. It gathered students from various IUCEE Chapters across
+        different states, facilitating the exchange of ideas and thought
+        processes related to various Sustainable Development Goals (SDGs). As a
+        member of the SDG-11 team within IASF, I participated in conducting
+        research on environmental issues aligned with our sustainability
+        development goal with our team. Together, we identified and formulated a
+        clear problem statement, and with the guidance of our mentor, Berjis
+        Driver Sir, we proposed effective solutions. It was a valuable
+        opportunity to collaborate with such experienced experts. IASF-2023 has
+        brought about a significant change in our lives, I now conscientiously
+        consider the environmental impact of my actions, whether it's minimizing
+        food wastage or responsibly disposing of waste, which has become my
+        newfound habit. Apart from my personal development, what I learned from
+        IASF-2023 from a professional perspective are problem-solving skills,
+        networking, and adaptation to changing times. I wholeheartedly look
+        forward to engaging in more enriching events like IASF in the future.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal2">
+      <button class="btn--close-modal" data-target="#modal2">&times;</button>
+      <p>
+        IASF 2023 was an eye-opening experience that I will forever cherish. My
+        journey from Hyderabad to Mysuru began with little to no prior knowledge
+        about IUCEE and its mission. However, from the moment I stepped into the
+        IUCEE Annual Student Forum, I was immersed in a world of innovation,
+        education, and sustainable development. The highlight of my IASF
+        experience was the opportunity to work alongside UN Ambassadors on SDG
+        15 - Life on Land. This collaboration exposed me to the pressing global
+        challenges related to environmental conservation, deforestation, and
+        ecosystem preservation. It was incredible to witness the dedication and
+        passion of the UN Ambassadors in their mission to make the world a
+        better place. The learnings and exposure I gained at IASF were truly
+        transformative. I was inspired by the diverse group of students who
+        shared their unique perspectives and innovative ideas. This motivated me
+        to bring a similar platform to my university, Anurag University. Hence,
+        the concept of AUNSF (Anurag University National Student Forum) was
+        born. IASF served as a catalyst for me and my peers to replicate the
+        spirit of collaboration, knowledge sharing, and commitment to
+        sustainable development within our own university. In conclusion, IASF
+        2023 was not just an event but a life-changing experience that broadened
+        my horizons, connected me with remarkable individuals, and empowered me
+        to make a positive impact in the world. I am grateful to IUCEE for this
+        opportunity and look forward to contributing to the global mission of
+        education and sustainable development.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal3">
+      <button class="btn--close-modal" data-target="#modal3">&times;</button>
+      <p>
+        IASF 2023 was an eye opening for all of us as it helped us to think,
+        rejuvenate and rejoice in the art of learning and gain practical
+        exposure to the current world happenings. This 3 -day conference helped
+        us think sustainably and contribute judiciously towards the betterment
+        of mother earth. All the mentors guided us on how to tackle the
+        problems, how to narrow down and navigate the solutions to the existing
+        problems and how effectively we can build a sustainable awareness model.
+        And also the 5-km walkathon around the city of Mysore was a wakening
+        call for all of us to get reminded as a responsible greener citizen. I
+        would like to extend my heartfelt gratitude to IUCEE organizations, Ms.
+        Sampada Pachaury mam and all our mentors for their untiring and
+        unwavering support to get the best out from us!! Their words of action
+        and speech was motivating and gave a conscious bell to the conscience to
+        build an eco-greener environment and abide to the same....!
+      </p>
+    </div>
+    <div class="modal hidden" id="modal4">
+      <button class="btn--close-modal" data-target="#modal4">&times;</button>
+      <p>
+        The 3 days spent at IASF 2023 left a lasting impression on me, and I
+        continue to feel its impact even after the event has concluded. The
+        guidance provided by UN mentors proved invaluable, allowing me to engage
+        with like-minded individuals who shared a desire to contribute to
+        society. We had the opportunity to view our project from various
+        perspectives, thanks to the valuable suggestions offered by several
+        industry delegates who observed our project display. All in all, the
+        event was truly unforgettable, and I gained numerous insights and key
+        takeaways from it.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal5">
+      <button class="btn--close-modal" data-target="#modal5">&times;</button>
+      <p>
+        For me, this event was a profound experience that significantly enriched
+        my journey as a student. Over those three days, I had the privilege of
+        engaging in a multitude of technical and informative sessions, expanding
+        my knowledge base and igniting my passion for engineering and
+        innovation. The event's highlights included an inspiring walkathon
+        through Mysore's picturesque streets, where I forged unforgettable
+        memories and had the honor of learning from mentors like Krishna Sir and
+        Sampada Pachaury Mam, who fueled my ambitions. The pinnacle was
+        presenting my AI-based water disinfection project to an audience of
+        scholars and influential figures, including the motivational Mr. Nile,
+        an American professor. This event underscored the vital role engineers
+        play in preserving our environment, instilling in me a profound sense of
+        responsibility to develop sustainable solutions for a brighter future.
+        In conclusion, the IUCEE and IASF event at Vidyavardhaka College in
+        Mysore was a transformative experience, expanding my technical expertise
+        and inspiring me to commit to sustainability and innovation in my
+        engineering journey.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal6">
+      <button class="btn--close-modal" data-target="#modal6">&times;</button>
+      <p>
+        IUCEE is the definition of "experiential learning with purpose". I had
+        always wondered to myself as an engineering student "Why are we as
+        engineers so important?" The answer to this question I found in the
+        Kletech IUCEE chapter when I learned being in an environment that
+        stimulates minds to think along the lines of solving real-life problems
+        with technology and this in return helped me bringing engineering
+        solutions to solve society's problems. Because "who are we as engineers
+        if we do not help the society?". It is exhilarating when you find the
+        right answers to questions that are important to you, I can assure you
+        that the question above was important to me as something along the same
+        lines was asked to me in my HR interview for placement. Knowing that no
+        question is unimportant and every answer has a purpose my journey at
+        IUCEE has been enriching
+      </p>
+    </div>
+    <h1 class="heading">Image Gallery</h1>
+    <div class="gallery-container">
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/65PKPqPt/DSC-2100.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/65PKPqPt/DSC-2100.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/VLJQX1kT/DSC-2105.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/VLJQX1kT/DSC-2105.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/Y2nB4jMY/DSC-2113.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/Y2nB4jMY/DSC-2113.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/MpBCrDRm/DSC-2156.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/MpBCrDRm/DSC-2156.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/ryQMSQCd/DSC-2316.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/ryQMSQCd/DSC-2316.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/LsMcd13K/DSC-2347.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/LsMcd13K/DSC-2347.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/pry7QYR8/DSC-2359.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/pry7QYR8/DSC-2359.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/ZRbXnzQw/DSC-2370.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/ZRbXnzQw/DSC-2370.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/8cPG26DP/DSC-2401.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/8cPG26DP/DSC-2401.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/tTzyvzKM/DSC-2467.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/tTzyvzKM/DSC-2467.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/44bnj6vZ/IASF-2023-pic10.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/44bnj6vZ/IASF-2023-pic10.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/9Fmz2D19/IASF-2023-pic3.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/9Fmz2D19/IASF-2023-pic3.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/Bv90qysz/PRS-1328.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/Bv90qysz/PRS-1328.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/9MLKqN5C/PRS-1388.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/9MLKqN5C/PRS-1388.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/cCHq9GMv/PRS-1888.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/cCHq9GMv/PRS-1888.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/MTt2mpRk/PRS-1957.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/MTt2mpRk/PRS-1957.jpg" />
+      </div>
+      <div
+        class="gallery-item"
+        data-src="https://i.postimg.cc/wv9YNm1c/PRS-1988.jpg"
+        data-fancybox="gallery"
+      >
+        <img src="https://i.postimg.cc/wv9YNm1c/PRS-1988.jpg" />
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
 		<div class="footer-col  justify-content-center text-center">
@@ -235,35 +952,126 @@
 	<p>Girls Hostel - Prof. Minal Salunke   9008924882   minal@kletech.ac.in</p>
 	<p>Boys Hostel - Prof. Shivanand P. P.   9448838690   shivanand@kletech.ac.in</p>
 	<p>Registration - Prof. Gireesh H. M.   9886337908   gireesh_hm@kletech.ac.in</p>
-	<p>Transportation - Prof. Balachandra Halemani   9738347126   balachandra@kletech.ac.in</p>
-      </div></div>
-    </footer>
-    
+ 
   
+  <p>Transportation - Prof. Balachandra Halemani   9738347126   balachandra@kletech.ac.in</p>
+  <div><a href=""><img src="images/linkedin.png"></a> 
+    <a href=""><img src="images/instagram.png"></a></div>
+   <br>
+  <p>Created by<a href=""> Neha Joshi</a> & <a href=""> Rakshita wagh</a></p>           
+</div></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      "use strict";
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+      const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".overlay");
+      const btnCloseModal = document.querySelectorAll(".btn--close-modal");
+      const btnsOpenModal = document.querySelectorAll("[data-target]");
 
+      ///////////////////////////////////////
+      // Modal window
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+      const closeModal = function () {};
 
+      btnsOpenModal.forEach(function (btn) {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(btn.dataset.target).classList.remove("hidden");
+          overlay.classList.remove("hidden");
+        });
+      });
 
-    
+      btnCloseModal.forEach(function (btn) {
+        btn.addEventListener("click", () => {
+          btn.closest(".modal").classList.add("hidden");
+          overlay.classList.add("hidden");
+        });
+      });
+
+      window.onclick = (event) => {
+        if (event.target == overlay) {
+          const modals = document.querySelectorAll(".modal");
+          modals.forEach((modal) => modal.classList.add("hidden"));
+          overlay.classList.add("hidden");
+        }
+      };
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          const modals = document.querySelectorAll(".modal");
+          modals.forEach((modal) => modal.classList.add("hidden"));
+          overlay.classList.add("hidden");
+        }
+      });
+
+      Fancybox.bind("[data-fancybox]", {
+        contentClick: false,
+        contentDblClick: "toggleZoom",
+        wheel: "slide",
+
+        Images: {
+          protected: true,
+        },
+
+        Toolbar: {
+          display: {
+            left: ["infobar"],
+            middle: [],
+            right: ["slideshow", "close"],
+          },
+        },
+
+        on: {
+          keydown: (fancybox, key) => {
+            switch (key) {
+              case "+":
+                fancybox.getSlide()?.panzoom.zoomIn();
+                break;
+
+              case "-":
+                fancybox.getSlide()?.panzoom.zoomOut();
+                break;
+            }
+          },
+        },
+      });
+
+      const swiper = new Swiper(".swiper", {
+        autoHeight: true,
+        loop: true,
+
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false,
+        },
+
+        mousewheel: {
+          forceToAxis: true,
+          sensitivity: 0.5,
+        },
+
+        autoplay: {
+          delay: 5000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 3,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>
