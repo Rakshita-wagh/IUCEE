@@ -426,6 +426,10 @@
 .icon-twitter-square:before {
   content: "\f081";
 }
+.icon-linkedin-square:before {
+  content: "\f0e1";
+}
+
 .icon-facebook-square:before {
   content: "\f082";
 }

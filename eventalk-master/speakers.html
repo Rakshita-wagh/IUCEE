@@ -1,384 +1,1040 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Eventalk - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/style.css">
+    <title>Team profile cards</title>
+    <style>
+      :root {
+        --color-primary: #ff676d;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        color: #54677c;
+      }
+
+      .container {
+        display: flex;
+        /* Responsive behaviour */
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 16px;
+      }
+
+      .heading--mentor {
+        font-size: 3em;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        color: #a73121;
+        font-weight: 800;
+        font-family: "Inter", sans-serif;
+      }
+      .heading--org {
+        font-size: 3em;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        color: #a73121;
+        font-weight: 800;
+        font-family: "Inter", sans-serif;
+      }
+
+      .card {
+        position: relative;
+        width: 300px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+        padding: 16px;
+        margin: 56px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.5),
+          0 5px 20px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .card-image img {
+        width: 100%;
+        transform: scale(1.2);
+      }
+
+      p {
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+
+      .name {
+        margin-top: 80px;
+        font-size: 1.2em;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        margin-bottom: 8px;
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        margin: 12px 8px;
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: opacity 0.4s;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      button i {
+        color: #fff;
+        font-size: 1.4em;
+      }
+
+      /* Social media colors */
+      button.github {
+        background-color: #24292e;
+      }
+
+      button.twitter {
+        background-color: #1da1f2;
+      }
+
+      button.pinterest {
+        background-color: #d3263a;
+      }
+
+      .body2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .container1 {
+        max-width: 1400px;
+        width: 100%;
+        overflow: hidden;
+        padding: 80px 0;
+      }
+      .container1 .main-card1 {
+        display: flex;
+        justify-content: space-evenly;
+        transition: 1s;
+      }
+      .container1 .main-card1 .cards {
+        display: flex;
+        row-gap: 50px;
+        flex-wrap: wrap;
+        margin: 0 20px;
+        justify-content: space-around;
+      }
+      .main-card1 .cards .card1 {
+        width: calc(100% / 4 - 10px);
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+        transition: all 0.4s ease;
+      }
+      .main-card1 .cards .card1:hover {
+        transform: translateY(-15px);
+      }
+      .cards .card1 .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cards .card1 .content .img {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        padding: 3px;
+        background: var(--color-primary);
+        margin-bottom: 14px;
+      }
+      .card1 .content .img img {
+        height: 100%;
+        width: 100%;
+        border: 3px solid #ffff;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .card1 .content .name {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 10px;
+      }
+      .card1 .content .job {
+        font-size: 20px;
+        color: var(--color-primary);
+      }
+      .card1 .content .media-icons {
+        margin-top: 10px;
+        display: flex;
+      }
+      .media-icons button {
+        text-align: center;
+        line-height: 33px;
+        height: 35px;
+        width: 35px;
+        margin: 0 4px;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background: var(--color-primary);
+        transition: all 0.3s ease;
+      }
+      .media-icons button:hover {
+        color: var(--color-primary);
+        background-color: #fff;
+        border-color: var(--color-primary);
+      }
+      .media-icons button:hover i {
+        color: var(--color-primary);
+      }
+
+      footer {
+        background: #111;
+        height: auto;
+        width: 100vw;
+
+        padding-top: 40px;
+        color: #fff;
+      }
+      .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-content h3 {
+        font-size: 2.1rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+      .footer-content p {
+        max-width: 700px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+        color: #cacdd2;
+      }
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+      }
+      .socials li {
+        margin: 0 10px;
+      }
+      .socials a {
+        text-decoration: none;
+        color: #fff;
+        border: 1.1px solid white;
+        padding: 5px;
+
+        border-radius: 50%;
+      }
+      .socials a i {
+        font-size: 1.1rem;
+        width: 20px;
+
+        transition: color 0.4s ease;
+      }
+      .socials a:hover i {
+        color: aqua;
+      }
+
+      @media (max-width: 1100px) {
+        .main-card1 .cards .card1 {
+          margin: 20px 0 10px 0;
+          width: calc(100% / 3 - 10px);
+        }
+      }
+      @media (max-width: 768px) {
+        .main-card1 .cards .card1 {
+          margin: 20px 0 10px 0;
+          width: calc(100% / 2 - 10px);
+        }
+      }
+      @media (max-width: 600px) {
+        .main-card1 .cards .card1 {
+          /* margin: 20px 0 10px 0; */
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Even<span>talk.</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item active"><a href="speakers.html" class="nav-link">Speakers</a></li>
-	          <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Buy ticket</a></li>
-
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-          <div class="col-md-9 ftco-animate pb-5">
-            <h1 class="mb-3 bread">Speakers</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Speakers <i class="ion-ios-arrow-forward"></i></span></p>
-          </div>
+        <a class="navbar-brand" href="index.html">IASF<span> 2024</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item active" ><a href="index.html" class="nav-link"><b>Home</b></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><b>IASF 2023</b></a></li>
+            <li class="nav-item"><a href="speakers.html" class="nav-link"><b>IASF Team</b></a></li>
+            <li class="nav-item"><a href="schedule.html" class="nav-link"><b>Schedule</b></a></li>
+            
+            <li class="nav-item cta mr-md-2"><a href="https://registration.kletech.ac.in/form-iasf-registration" class="nav-link">Register</a></li>
+</ul>
         </div>
       </div>
-    </section>
-
-    <section class="ftco-section services-section bg-light">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-placeholder"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Venue</h3>
-                <p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-world"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Transport</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-hotel"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Hotel</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-cooking"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Restaurant</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
+    </nav>
+    <h1 class="heading--mentor">IASF Mentors</h1>
+    <div class="container">
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/x8P56BQh/Aditya-recent-pic.jpg"
+            alt="Profile image"
+          />
+        </div>
+        <p class="name">Mr. Aditya Bhatnagar</p>
+        <p>STEM Educator <br />The Mindcrafters, Chandigarh</p>
+        <p>
+          Graduated from IIT Delhi in 1977 and spent more than 30 years in
+          electronic manufacturing. Working in education sector for the past 10
+          years in promoting hands-on stem, tinkering and design thinking in
+          schools.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/aditya-bhatnagar-45853014','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
         </div>
       </div>
-    </section>
-    
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Speaker</span>
-            <h2 class="mb-4"><span>Our</span> Speakers</h2>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="col-md-4 speaker">
-        		<img src="images/speaker-1.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-					<div class="col-md-4 speaker">
-        		<img src="images/speaker-2.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-        	<div class="col-md-4 speaker">
-        		<img src="images/speaker-3.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-        	<div class="col-md-4 speaker">
-        		<img src="images/speaker-4.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-					<div class="col-md-4 speaker">
-        		<img src="images/speaker-5.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-        	<div class="col-md-4 speaker">
-        		<img src="images/speaker-6.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
-        		<div class="text text-center pt-3">
-        			<h3>John Adams</h3>
-        			<span class="position">Web Developer</span>
-        			<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-		
-		<section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <span class="subheading">Pricing Tables</span>
-            <h2 class="mb-1"><span>Our</span> Ticket Pricing</h2>
-          </div>
-        </div>
-        <div class="row">
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-	            <h2 class="heading">Personal</h2>
-	            <span class="price"><sup>$</sup> <span class="number">85</span></span>
-	            <span class="excerpt d-block">per Month</span>
-	            
-	            <h3 class="heading-2 my-4">Enjoy All The Features</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>Conference Seats</li>
-	              <li>Free Wifi</li>
-	              <li>Coffee Breaks</li>
-	              <li>Lunch</li>
-	              <li>Workshops</li>
-	              <li>One Speakers</li>
-	              <li>Papers</li>
-	            </ul>
 
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Buy Ticket</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-	            <h2 class="heading">Small Team</h2>
-	            <span class="price"><sup>$</sup> <span class="number">200</span></span>
-	            <span class="excerpt d-block">per Month</span>
-	            
-	            <h3 class="heading-2 my-4">Enjoy All The Features</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>Conference Seats</li>
-	              <li>Free Wifi</li>
-	              <li>Coffee Breaks</li>
-	              <li>Lunch</li>
-	              <li>Workshops</li>
-	              <li>One Speakers</li>
-	              <li>Papers</li>
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Buy Ticket</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-	            <h2 class="heading">Family Pack</h2>
-	            <span class="price"><sup>$</sup> <span class="number">499</span></span>
-	            <span class="excerpt d-block">per Month</span>
-	            
-	            <h3 class="heading-2 my-4">Enjoy All The Features</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>Conference Seats</li>
-	              <li>Free Wifi</li>
-	              <li>Coffee Breaks</li>
-	              <li>Lunch</li>
-	              <li>Workshops</li>
-	              <li>One Speakers</li>
-	              <li>Papers</li>
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Buy Ticket</a>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/44BfYgY9/Kalyan-Pic.jpg"
+            alt="Profile image"
+            style="transform: scale(1)"
+          />
+        </div>
+        <p class="name">Dr. Kalyan Ram B</p>
+        <p>CEO - Indxo AI, Bengaluru<br />Vice President IAOE, Austria</p>
+        <p>
+          Kalyan heads the Engineering Design team at Indxo AI that includes
+          designing solutions to Industry 4.0 for Manufacturing involving ML and
+          AI. He is also the Vice President at International Association of
+          Online Engineering.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/kalyan-ram-bhimavaram/','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
       </div>
-    </section>
 
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-4 mb-4">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/R017fRJq/IMG-4193-f.jpg"
+            alt="Profile image"
+            style="transform: scale(1)"
+          />
+        </div>
+        <p class="name">Ms. Sampada Pachuary</p>
+        <p>Director & Board Member<br />IUCEE Foundation, Noida</p>
+        <p>
+          Sampada is a Post Graduate in VLSI Design from IIT Delhi. She has
+          worked with STMicroelectronics in India and Italy offices, Micron
+          Technology Inc. USA. She served as Vice President at Electronics
+          Sector Skills Council of India .
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/sampadapachaury/','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/HxRLBrNR/Dr-Prathiba-Nagabhushan.png"
+            alt="Profile image"
+            style="transform: scale(1)"
+          />
+        </div>
+        <p class="name">Dr. Prathiba Nagabhushan</p>
+        <p>Educational Consultant<br />Australian Catholic University</p>
+        <p>
+          She's a Gold-Medallist from Madras and Bangalore Universities. She has
+          won awards for teaching innovation and research excellence, and her
+          publications focus on student motivation and engagement.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.google.com','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/28YnN5Th/Prof-Pic1-Atun-Roy-Choudhury.jpg"
+            alt="Profile image"
+            style="transform: scale(1)"
+          />
+        </div>
+        <p class="name">Atun Roy Choudhury Ph.D.</p>
+        <p>Assistant General Manager<br />Cube Bio Energy</p>
+        <p>
+          He has worked with NARL-ISRO, IL&FS Environment, Ramky Enviro
+          Engineers Ltd., Banka Bio Ltd., and Eco India Projects Pvt. Ltd.
+          Renowned as a leading researcher in waste management, water, and
+          sanitation,
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/atun-roy-choudhury-a64a3b116/','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/x1jXRx3b/sks-in-July-2023-shalini-k-sharma.jpg"
+            alt="Profile image"
+            style="transform: scale(1.5) translateY(20px)"
+          />
+        </div>
+        <p class="name">Shalini K. Sharma</p>
+        <p>
+          Practising Mental Health <br />
+          Nitte University
+        </p>
+        <p>
+          Alumna of - St. Agnes College, School of Social Work, Mangalore, and
+          the National Institute of Mental Health and Neuro Sciences, Bangalore.
+          She has worked in the NIMHANS, Bangalore, L&T Bangalore and in NMAMIT,
+          Nitte.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/shalini-k-sharma-1a356922','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/nrBtqJWf/Keith-Pic-ICTIEE-2024.jpg"
+            alt="Profile image"
+            style="transform: scale(1)"
+          />
+        </div>
+        <p class="name">Keith R Fernandes</p>
+        <p>Faculty, ECE, St. Joseph Engineering College, Mangaluru</p>
+        <p>
+          Keith Fernandes is an Asst Professor in the Department of Electronics
+          and Communication Engineering at St. Joseph Engineering College,
+          Mangaluru. Keith is pursuing a PhD at the NIT Surathkal Karnataka.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://linkedin.com/in/keith-fernandes-58bb4454/','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/yxvhhYCG/123.jpg"
+            alt="Profile image"
+            style="transform: scale(1.05) translateY(1%)"
+          />
+        </div>
+        <p class="name">Dr. Siddharthsinh Jadeja</p>
+        <p>Director, Sathway Manufacturer, Entrepreneur Ahmedabad</p>
+        <p>
+          A Mechanical Engineer, and renowned educationist intrapreneur, his
+          personal commitment towards being the finest in his respective field
+          and rigorous concern for essentials took him in leadership role of
+          international organization.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/siddharthsinh-jadeja-9bb66819/','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img
+            src="https://i.postimg.cc/kXYFB4c6/1234.jpg"
+            alt="Profile image"
+            style="transform: scale(2.5) translateY(20%)"
+          />
+        </div>
+        <p class="name">Varun Chamadiya</p>
+        <p>Founder ,Proactive I , an education & innovation company, Satna</p>
+        <p>
+          His guiding principles - Invent/Innovate for the real need and venture
+          into the Unknown with child-like curiosity & never hesitate to
+          experiment with Ideas. The results reflect in his work - The 8
+          building blocks, The various Environments & Innovation Lab.
+        </p>
+        <div class="socials">
+          <button
+            target="_blank"
+            onclick="window.open('https://www.linkedin.com/in/varun-chamadiya-2104911a','_blank')"
+            class="twitter"
+          >
+            <i class="fab fa-linkedin"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <h1 class="heading--org">IASF Organizers</h1>
+    <div class="body2">
+      <div class="container1">
+        <div class="main-card1">
+          <div class="cards">
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img
+                    src="https://i.postimg.cc/R017fRJq/IMG-4193-f.jpg"
+                    alt=""
+                    style="object-position: top"
+                  />
+                </div>
+                <div class="details">
+                  <div class="name">Ms. Sampada Pachaury</div>
+                  <div class="job">Chair</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/sampadapachaury/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img
+                    src="https://i.postimg.cc/VNdk2Zt6/sujata.jpg"
+                    alt=""
+                    style="object-position: top"
+                  />
+                </div>
+                <div class="details">
+                  <div class="name">Ms. Sujata Kotabagi</div>
+                  <div class="job">Co-Chair</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/sampadapachaury/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img
+                    src="https://i.postimg.cc/PJqfX3dD/20221106-195454.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <div class="name">Tanvi Bhujannavar</div>
+                  <div class="job">President IUCEE KLETech</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/tanvi-b-782698141/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/tan_.bee/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/CKmbs2gx/saya.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Govardhan Saya</div>
+                  <div class="job">Liaisoning & Public Speaking</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/govardhan-saya-b80959248/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/gobeeey/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/ydxn8DTQ/1.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Harsh Goyal</div>
+                  <div class="job">Website Development</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/harsh-goyal-a9349b247/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/harsh.73.goyal/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/tRh8xDhw/muthu.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Muthu Raj R</div>
+                  <div class="job">Fund Raising</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/muthu-raj-muthu-raj-0160611a7','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/muthuraj0819/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/tTcS2JjJ/yeshna.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Yeshna N Irkal</div>
+                  <div class="job">Content Developer</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/yeshnairkal20','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/yeshna__20/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/0QFxMkFp/sumana.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Sumana</div>
+                  <div class="job">Volunteer Management</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/sumana-y-54aa42259/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/SN3x9FtG/keerthi.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Keerthi Honakeri</div>
+                  <div class="job">Registrations</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/keerthi-honakeri-949906259/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/keerthi_honakeri_/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/qvBHgmpG/satwick.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Satwik Bhat</div>
+                  <div class="job">Technical Support</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('http://www.linkedin.com/in/2004satwik','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/satwik_bhat_18/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/8cRyNV3m/rahul.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Rahul H Hanumagatti</div>
+                  <div class="job">Treasurer</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/rahul-h-hanumagatti-683221218','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/rahul_hanumagatti/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img
+                    src="https://i.postimg.cc/gJkTWK6B/anushree.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <div class="name">Anushree Bashetti</div>
+                  <div class="job">Disciplinary Committee</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/anushree-bashetti-07797726a','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/VNL2kpf9/chetan.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Chetan Kumar Budhihal</div>
+                  <div class="job">Culture and Sports Committee</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/chetan-b-budihal-2a952a28a','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/chetan_budihal_/,'_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img
+                    src="https://i.postimg.cc/NfRZ2p7n/akshantha.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <div class="name">Akshatha U</div>
+                  <div class="job">Hospitality</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/akshatha-u-964069230','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/2jbVP2SW/vatsa.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Shreevatsa Alawandi</div>
+                  <div class="job">Marketing & Public relation</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/shreevatsa-alawandi-18a36126a/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/fiercefirefly123','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card1">
+              <div class="content">
+                <div class="img">
+                  <img src="https://i.postimg.cc/L80QSBDD/pruthvi.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <div class="name">Pruthviraj G Shirur</div>
+                  <div class="job">Creative Production
+</div>
+                </div>
+                <div class="media-icons">
+                  <button
+                    onclick="window.open('https://www.linkedin.com/in/pruthviraj-shirur-bb09312a2/','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </button>
+                  <button
+                    onclick="window.open('https://www.instagram.com/shirur_pruthviraj','_blank')"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Eventalk</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Useful Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Speakers</a></li>
-                <li><a href="#" class="py-2 d-block">Shcedule</a></li>
-                <li><a href="#" class="py-2 d-block">Events</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Privacy</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Career</a></li>
-                <li><a href="#" class="py-2 d-block">About Us</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-                <li><a href="#" class="py-2 d-block">Services</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <h3>IUCEE Annual Student Forum</h3>
+        <p>
+          Contact Us:- <br />
+          Girls Hostel - Prof. Minal Salunke &nbsp;<i class="fa fa-phone"></i
+          >&nbsp;9008924882 &nbsp;<i class="fa fa-envelope"></i
+          >&nbsp;minal@kletech.ac.in
+          <br />
+          Boys Hostel - Prof. Shivanand P. P. &nbsp;<i class="fa fa-phone"></i
+          >&nbsp;9448838690 &nbsp;<i class="fa fa-envelope"></i
+          >&nbsp;shivanand@kletech.ac.in
+          <br />
+          Registration - Prof. Gireesh H. M. &nbsp;<i class="fa fa-phone"></i
+          >&nbsp;9886337908 &nbsp;<i class="fa fa-envelope"></i
+          >&nbsp;gireesh_hm@kletech.ac.in
+          <br />
+          Transportation - Prof. Balachandra Halemani &nbsp;<i
+            class="fa fa-phone"
+          ></i
+          >&nbsp;9738347126 &nbsp;<i class="fa fa-envelope"></i
+          >&nbsp;balachandra@kletech.ac.in
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/kletech_iucee_chapter?igshid=MzRlODBiNWFlZA=="
+              ><i class="fa fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
       </div>
     </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
   </body>
 </html>
